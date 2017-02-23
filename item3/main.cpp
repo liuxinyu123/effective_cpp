@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <vector>
 #include "rational.h"
+#include "textblock.h"
 
 using std::cout;
 using std::endl;
@@ -9,12 +10,14 @@ using std::endl;
 void test_const ();
 void test_itertor ();
 void test_rational ();
+void test_textbolck ();
 
 int main (int argc, char *argv[])
 {
 	test_const ();
 	test_itertor ();
 	test_rational ();
+	test_textbolck ();
 
 	return 0;
 }
@@ -58,5 +61,18 @@ void test_rational ()
 	Rational r3 = r1 * r2;
 	//r1 * r2 = r3;
 	cout << "r3 is " << r3 << endl;
+
+}
+
+void test_textbolck ()
+{
+	TextBlock tb ("hello,world");
+	const TextBlock ctb ("thank you");
+
+	cout << tb[3] << endl;
+	cout << ctb[3] << endl;
+
+	tb[0] = 'w';
+	//ctb[0] = 'w';
 
 }
