@@ -3,6 +3,7 @@
 #include <vector>
 #include "rational.h"
 #include "textblock.h"
+#include "ctextblock.h"
 
 using std::cout;
 using std::endl;
@@ -11,6 +12,7 @@ void test_const ();
 void test_itertor ();
 void test_rational ();
 void test_textbolck ();
+void test_ctextblock ();
 
 int main (int argc, char *argv[])
 {
@@ -18,6 +20,7 @@ int main (int argc, char *argv[])
 	test_itertor ();
 	test_rational ();
 	test_textbolck ();
+	test_ctextblock ();
 
 	return 0;
 }
@@ -75,4 +78,11 @@ void test_textbolck ()
 	tb[0] = 'w';
 	//ctb[0] = 'w';
 
+}
+
+void test_ctextblock ()
+{
+	const CTextBlock cctb ("hello");
+   	char *pc = &cctb[0];
+	//*pc = 'e';   
 }
