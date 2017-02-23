@@ -85,4 +85,7 @@ void test_ctextblock ()
 	const CTextBlock cctb ("hello");
    	char *pc = &cctb[0];
 	//*pc = 'e';   
+	std::size_t sz = cctb.length ();
+	cout << sz << endl;
+
 }
