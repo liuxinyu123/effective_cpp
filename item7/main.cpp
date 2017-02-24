@@ -1,14 +1,17 @@
 #include <iostream>
 #include <string>
+#include "b.h"
 
 using std::cout;
 using std::endl;
 
 void test_string ();
+void test_pure_virtual ();
 
 int main (int argc, char *argv[])
 {
 	test_string ();
+	test_pure_virtual ();
 
 	return 0;	
 }
@@ -34,4 +37,9 @@ void test_string ()
 	std::string *pss = nullptr;
 	pss = ps;
 	delete pss;
+}
+
+void test_pure_virtual ()
+{
+	D d;
 }
