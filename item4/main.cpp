@@ -1,16 +1,23 @@
 #include <iostream>
+#include "filesystem.h"
+#include "directory.h"
 
 using std::cout;
 using std::endl;
 
 void test_non_initialization ();
+void test_static ();
+
+const static FileSystem tfs ();
 
 int main (int argc, char *argv[])
 {
 
 	test_non_initialization ();
-	return 0;
+	test_static ();
 
+
+	return 0;
 }
 
 void test_non_initialization ()
@@ -34,4 +41,9 @@ void test_non_initialization ()
 		Point p;
 		cout << p.x << " " << p.y << endl;
 	}
+}
+
+void test_static ()
+{
+	Directory d ("hello");	
 }
