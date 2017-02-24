@@ -83,7 +83,10 @@ void test_textbolck ()
 void test_ctextblock ()
 {
 	const CTextBlock cctb ("hello");
-   	char *pc = &cctb[0];
+	CTextBlock ctb ("world");
+	const char *pc = &cctb[0];
+	char *pc1 = &ctb[0];
+	//*pc1 = 'h';
 	//*pc = 'e';   
 	std::size_t sz = cctb.length ();
 	cout << sz << endl;
