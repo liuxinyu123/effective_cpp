@@ -35,10 +35,18 @@ public:
 			return pb -> height;	
 		}
 
+		std::string get_data ()
+		{
+			return pb -> data;
+		}
+
 		std::string get_name ()
 		{
 			return name;
 		}
+
+private:
+		void swap (Widget &w);
 private:
 		Bitmap *pb;
 		std::string name;
