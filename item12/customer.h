@@ -45,11 +45,27 @@ public:
 
 			return *this;
 		}
-private:
+protected:
 		std::string name;
 		Date lastTransaction;
 };
 
+class PriorityCustomer : public Customer
+{
+		friend std::ostream& operator<< (std::ostream &os, const PriorityCustomer &pc);
+public:
+		PriorityCustomer (const std::string &s = "", int y = 1990, int m = 1, int d = 1, int p = 0)
+			:Customer (s, y, m ,d), priority (p) {}
+		PriorityCustomer (const PriorityCustomer &pc);
+		PriorityCustomer& operator= (const PriorityCustomer &pc);
+		int get_priority () const
+		{
+			return priority;
+		}
+
+private:
+		int priority;
+};
 
 
 

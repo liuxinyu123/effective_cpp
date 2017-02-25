@@ -8,4 +8,22 @@ std::ostream& operator<< (std::ostream &os, const Customer &c)
 	return os;	
 }
 
+std::ostream& operator<< (std::ostream &os, const PriorityCustomer &pc)
+{
+	const Customer &rc = pc;
+	operator<< (os, rc);
+	os << " " << pc.get_priority ();
 
+	return os;
+}
+
+PriorityCustomer::PriorityCustomer (const PriorityCustomer &pc)
+	:Customer (pc), priority (pc.priority) {}
+
+PriorityCustomer& PriorityCustomer::operator= (const PriorityCustomer &pc)
+{
+	Customer::operator= (pc);
+	priority = pc.priority;
+
+	return *this;
+}
