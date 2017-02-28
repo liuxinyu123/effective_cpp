@@ -39,5 +39,7 @@ void test_date2 ()
 {
 	Date d1 (Month (3), Day (12), Year (2017));
 	cout << d1 << endl;
+	//Date d2 (Day (3), Month (4), Year (2008));
+	//cout << d2 << endl;
 	
 }
